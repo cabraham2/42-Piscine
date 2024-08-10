@@ -58,6 +58,6 @@ void rush(int x, int y)
 }
 
 int main(void){
-	rush(12, 5);
+	rush(120, 57);
 	return(0);
 }
