@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:18:12 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/10 07:21:09 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/10 07:58:48 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ int	ft_str_is_numeric(char *str)
 	{
 		if (*str < '0' || *str > '9')
 		{
-			return (0); 
+			return (0);
 		}
-		str++; 
+		str++;
 	}
-	return (1); 
+	return (1);
 }
-

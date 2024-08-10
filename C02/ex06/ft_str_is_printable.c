@@ -6,19 +6,19 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 07:32:25 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/10 07:34:32 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/10 07:57:40 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+int	ft_str_is_printable(char *str)
 {
 	while (*str)
 	{
-		if (!(*str >= '20' && *str <= '22') || (*str >= '25' && *str <= '2F') || (*str >= '30' && *str <= '3F') || (*str == '5F'))
+		if (!(*str > -1 && *str < 32) || (*str == 127))
 		{
-			return (0);
+			return (1);
 		}
 		str++;
 	}
-	return (1);
+	return (0);
 }
