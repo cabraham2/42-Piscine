@@ -6,22 +6,19 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:18:12 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/09 12:20:24 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/10 06:47:13 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_alpha(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z') && (str[i] >= 'A' && str[i] <= 'Z'))
+		if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
 		{
-			i++;
+			return (0);
 		}
-		return (1);
+		str++;
 	}
-	return (0);
+	return (1);
 }
