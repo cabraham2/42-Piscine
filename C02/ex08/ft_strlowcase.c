@@ -6,14 +6,14 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 23:50:27 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/11 23:51:52 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/12 00:06:48 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strlowcase(char *str)
 {
-	int i;
-	int diff;
+	int	i;
+	int	diff;
 
 	i = 0;
 	diff = 'a' - 'A';
