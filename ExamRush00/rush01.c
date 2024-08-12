@@ -1,58 +1,69 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush1.c                                            :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 05:09:45 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/10 05:09:47 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/10 15:01:58 by hdelacou          #+#    #+#             */
+/*   Updated: 2024/08/11 21:06:24 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-void ft_putchar(char c){
-	write(1, &c, 1);
+void	writing_element(int i, int j, int x, int y)
+{
+	if (i == 0 && j == 0)
+	{
+		ft_putchar('/');
+	}
+	else if (i == 0 && j == x - 1)
+	{
+		ft_putchar('\\');
+	}
+	else if (i == y - 1 && j == 0)
+	{
+		ft_putchar('\\');
+	}
+	else if (i == y - 1 && j == x - 1)
+	{
+		ft_putchar('/');
+	}
+	else if (i == 0 || i == y - 1 || j == 0 || j == x - 1)
+	{
+		ft_putchar('*');
+	}
+	else
+	{
+		ft_putchar(' ');
+	}
 }
 
-void rush(int x, int y)
+void	rush(int x, int y)
 {
-	int i, j;
+	int	i;
+	int	j;
 
-	if (x <= 0 || y <+ 0)
-	{
-		return;
-	}
 	i = 0;
+	if (x <= 0 || y <= 0)
+	{
+		return ;
+	}
+	else if (x == 1 && y == 1)
+	{
+		ft_putchar('/');
+		return ;
+	}
 	while (i < y)
 	{
 		j = 0;
 		while (j < x)
 		{
-			if ((i == 0 && j == 0) || (i == y - 1 && j == x - 1))
-			{
-				ft_putchar('/');
-			}
-			else if ((i == y - 1 && j == 0) || (i == 0 && j == x - 1))
-			{
-				ft_putchar('\\');
-			}
-			else if (i == 0 || i == y - 1 || j == 0 || j == x - 1)
-			{
-				ft_putchar('*');
-			}
-			else{
-				ft_putchar(' ');
-			}
+			writing_element(i, j, x, y);
 			j++;
 		}
 		ft_putchar('\n');
 		i++;
 	}
-}
-
-int main(void){
-	rush(12, 5);
-	return(0);
 }
