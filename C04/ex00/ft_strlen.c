@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 11:18:12 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/14 13:52:52 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/14 13:28:34 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/14 13:30:36 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int	ft_strlen(char *str)
 {
-	while (*str)
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
-		{
-			return (0);
-		}
-		str++;
+		i++;
 	}
-	return (1);
+	return (i);
 }

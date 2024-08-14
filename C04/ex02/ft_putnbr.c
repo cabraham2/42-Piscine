@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 11:18:12 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/14 13:52:52 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/14 13:44:37 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/14 13:44:43 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	while (*str)
-	{
-		if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
-		{
-			return (0);
-		}
-		str++;
-	}
-	return (1);
+	write(1, &c, 1);
 }
