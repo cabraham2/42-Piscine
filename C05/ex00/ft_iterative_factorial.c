@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:16:57 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/15 13:49:25 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/15 14:24:32 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/15 15:20:07 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putnbr(int nb)
+int	ft_iterative_factorial(int nb)
 {
-	if (nb == 2147483647)
-	{
-		write(1, "2147483647", 11);
-	}
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 12);
-	}
+	int	resultat;
+
+	resultat = 1;
 	if (nb < 0)
 	{
-		write(1, "-", 1);
-		nb *= -1;
+		return (0);
 	}
-	if (nb > 9)
+	while (nb > 0)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		resultat = resultat * nb;
+		nb--;
 	}
-	else
-	{
-		nb += '0';
-		write(1, &nb, 1);
-	}
+	return(resultat);
 }
+
