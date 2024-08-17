@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:53:14 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/15 16:54:57 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/16 11:08:10 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 int	ft_recursive_power(int nb, int power)
 {
-	int	resultat;
-
-	int i;
-
-	i = 0;
-
-	resultat = nb;
 	if (power < 0)
 	{
 		return (0);
@@ -33,12 +26,7 @@ int	ft_recursive_power(int nb, int power)
 	{
 		return (1);
 	}
-	while(i < power - 1)
-	{
-		resultat *= nb;
-		i++;
-	}
-	return (ft_recursive_power(nb, power - 1));
+	return (nb * ft_recursive_power(nb, power - 1));
 }
 
 // int	main()
