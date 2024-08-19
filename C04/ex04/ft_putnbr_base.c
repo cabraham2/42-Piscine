@@ -1,41 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:16:57 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/19 05:37:10 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/19 02:50:09 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/19 03:43:16 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+char	base(char *hexa)
 {
-	write(1, &c, 1);
+	int nb;
+
+	nb = 0;
+	while (hexa[nb] != '\0')
+	{
+		nb++;
+	}
 }
 
-void	ft_putnbr(int nb)
+void	ft_putnbr_base(int nbr, char *base)
 {
-	if (nb == -2147483648)
+	if (nbr == 2147483647)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		write(1, "2147483647", 11);
 	}
-	if (nb < 0)
+	if (nbr == -2147483648)
 	{
-		ft_putchar('-');
-		nb = nb * -1;
+		write(1, "-2147483648", 12);
 	}
-	if (nb < 10)
+	if (nbr < 0)
 	{
-		ft_putchar(nb + '0');
+		write(1, "-", 1);
+		nbr *= -1;
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
 	}
 	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		nbr += '0';
+		write(1, &nbr, 1);
 	}
 }

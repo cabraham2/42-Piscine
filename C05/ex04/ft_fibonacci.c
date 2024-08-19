@@ -6,13 +6,12 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:23:25 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/16 10:47:17 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/19 04:30:10 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_fibonacci(int index)
 {
-	
 	if (index < 0)
 	{
 		return (-1);
@@ -25,7 +24,6 @@ int	ft_fibonacci(int index)
 	{
 		return (1);
 	}
-	
 	else
 	{
 		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));

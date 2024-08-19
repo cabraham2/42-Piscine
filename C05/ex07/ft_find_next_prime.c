@@ -1,41 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:16:57 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/19 05:37:10 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/19 06:27:42 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/19 06:52:37 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_is_prime(int nb)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 1;
+	if (nb < 2)
+	{
+		return (0);
+	}
+	while (i < nb)
+	{
+		if (nb < 0)
+		{
+			return (0);
+		}
+		if (i != 1 && i != nb && nb % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-void	ft_putnbr(int nb)
+int	ft_find_next_prime(int nb)
 {
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb < 10)
-	{
-		ft_putchar(nb + '0');
-	}
+	if (ft_is_prime(nb) == 0)
+		return (ft_find_next_prime(nb +1));
 	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		return (nb);
 	}
 }
+/* #include <stdio.h>
+int	main(void)
+{
+	printf("%d", ft_find_next_prime(52280));
+} */

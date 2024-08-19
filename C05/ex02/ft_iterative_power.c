@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:23:56 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/15 16:51:25 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/19 04:29:39 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 int	ft_iterative_power(int nb, int power)
 {
 	int	resultat;
-
-	int i;
+	int	i;
 
 	i = 0;
-
 	resultat = nb;
 	if (power < 0)
 	{
@@ -33,7 +31,7 @@ int	ft_iterative_power(int nb, int power)
 	{
 		return (1);
 	}
-	while(i < power - 1)
+	while (i < power - 1)
 	{
 		resultat *= nb;
 		i++;

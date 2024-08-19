@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 14:24:32 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/15 15:20:07 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/19 04:27:24 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ int	ft_iterative_factorial(int nb)
 		resultat = resultat * nb;
 		nb--;
 	}
-	return(resultat);
+	return (resultat);
 }
-
