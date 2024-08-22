@@ -1,40 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 11:33:00 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/22 13:48:53 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/22 15:23:02 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/22 15:28:36 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
-	int i;
-	int diff;
-	int *tableau;
+# define ABS(Value) (((Value) < 0) ? -(Value) : (Value))
 
-	i = 0;
-	diff = max - min;
-	if (min >= max)
-	{
-		*range = NULL;
-		return (-1);
-	}
-	tableau = malloc(diff * sizeof(int));
-	if (!(tableau))
-		return (-1);
-	while (min < max)
-	{
-		tableau[i] = min;
-		min++;
-		i++;
-	}
-	*range = tableau;
-	return (diff);
-}
+#endif

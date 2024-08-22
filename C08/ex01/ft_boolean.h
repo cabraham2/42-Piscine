@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 11:33:00 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/22 13:48:53 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/22 12:57:24 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/22 15:11:52 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
-	int i;
-	int diff;
-	int *tableau;
+# include <unistd.h>
 
-	i = 0;
-	diff = max - min;
-	if (min >= max)
-	{
-		*range = NULL;
-		return (-1);
-	}
-	tableau = malloc(diff * sizeof(int));
-	if (!(tableau))
-		return (-1);
-	while (min < max)
-	{
-		tableau[i] = min;
-		min++;
-		i++;
-	}
-	*range = tableau;
-	return (diff);
-}
+typedef char t_bool;
+
+# define TRUE 1
+# define FALSE 0
+# define SUCCESS 0
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define EVEN(abraham) abraham % 2 == 0
+
+#endif
