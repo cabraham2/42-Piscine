@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 15:31:22 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/21 18:25:03 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/26 15:19:48 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	*ft_range(int min, int max)
 {
-	int i;
-	int diff;
-	int *tableau;
+	int	i;
+	int	diff;
+	int	*tableau;
 
 	i = 0;
 	diff = max - min;

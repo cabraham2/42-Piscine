@@ -6,32 +6,49 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 00:09:42 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/19 17:59:33 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:49:43 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	taille_dest;
-	unsigned int	taille_src;
-	unsigned int	concat;
+	unsigned int	destlen;
+	unsigned int	srclen;
+	unsigned int	i;
+	unsigned int	j;
 
-	taille_dest = 0;
-	taille_src = 0;
-	concat = 0;
-	while (dest[taille_dest])
-		taille_dest++;
-	while (src[taille_src])
-		taille_src++;
-	if (taille_dest >= size)
-		return (size + taille_src);
-	while (concat < (size - taille_dest - 1) && src[concat])
+	destlen = 0;
+	srclen = 0;
+	while (dest[destlen])
+		destlen++;
+	while (src[srclen])
+		srclen++;
+	i = 0;
+	j = destlen;
+	if (size <= destlen)
+		return (srclen + size);
+	while (src[i] && i < size - destlen - 1)
 	{
-		dest[taille_dest + concat] = src[concat];
-		concat++;
+		dest[j] = src[i];
+		i++;
+		j++;
 	}
-	dest[taille_dest + concat] = '\0';
-	return (taille_dest + taille_src);
+	dest[j] = '\0';
+	return (destlen + srclen);
 }
+
+/*#include <stdio.h>
+
+int main()
+{
+    char dest[20] = "Hello, ";
+    char src[] = "world!";
+    unsigned int size = 15;
+
+    unsigned int result = ft_strlcat(dest, src, size);
+
+    printf("Result: %u\n", result);
+    printf("Concatenated String: %s\n", dest);
+
+    return 0;
+}*/

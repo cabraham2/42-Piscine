@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 11:33:00 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/26 15:20:06 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/24 04:39:38 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/24 04:49:52 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-int	ft_ultimate_range(int **range, int min, int max)
+typedef struct s_point
 {
-	int	i;
-	int	diff;
-	int	*tableau;
+	int	x;
+	int	y;
+} t_point;
 
-	i = 0;
-	diff = max - min;
-	if (min >= max)
-	{
-		*range = NULL;
-		return (-1);
-	}
-	tableau = malloc(diff * sizeof(int));
-	if (!(tableau))
-		return (-1);
-	while (min < max)
-	{
-		tableau[i] = min;
-		min++;
-		i++;
-	}
-	*range = tableau;
-	return (diff);
-}
+#endif

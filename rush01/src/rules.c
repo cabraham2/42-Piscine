@@ -3,33 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   rules.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ljacq <ljacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 10:05:55 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/17 10:07:27 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/18 12:57:16 by ljacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int check_double(int tab[4][4], int pos, int num)
+int	check_col_up(int tab[4][4], int pos, int entry[16])
 {
-	int i;
-
-	i = -1;
-	while (++i < pos / 4)
-		if (tab[i][pos % 4] == num)
-			return (1);
-	i = -1;
-	while (++i < pos % 4)
-		if (tab[pos / 4][i] == num)
-			return (1);
-	return (0);
-}
-
-int check_col_up(int tab[4][4], int pos, int entry[16])
-{
-	int i;
-	int max;
-	int count;
+	int	i;
+	int	max;
+	int	count;
 
 	i = 0;
 	max = 0;
@@ -51,11 +36,11 @@ int check_col_up(int tab[4][4], int pos, int entry[16])
 	return (0);
 }
 
-int check_row_right(int tab[4][4], int pos, int entry[16])
+int	check_row_right(int tab[4][4], int pos, int entry[16])
 {
-	int i;
-	int max_size;
-	int visible_towers;
+	int	i;
+	int	max_size;
+	int	visible_towers;
 
 	i = 4;
 	max_size = 0;
@@ -76,11 +61,11 @@ int check_row_right(int tab[4][4], int pos, int entry[16])
 	return (0);
 }
 
-int check_col_down(int tab[4][4], int pos, int entry[16])
+int	check_col_down(int tab[4][4], int pos, int entry[16])
 {
-	int i;
-	int max;
-	int count;
+	int	i;
+	int	max;
+	int	count;
 
 	i = 3;
 	max = 0;
@@ -102,11 +87,11 @@ int check_col_down(int tab[4][4], int pos, int entry[16])
 	return (0);
 }
 
-int check_row_left(int tab[4][4], int pos, int entry[16])
+int	check_row_left(int tab[4][4], int pos, int entry[16])
 {
-	int i;
-	int max;
-	int count;
+	int	i;
+	int	max;
+	int	count;
 
 	i = 0;
 	max = 0;
@@ -128,7 +113,7 @@ int check_row_left(int tab[4][4], int pos, int entry[16])
 	return (0);
 }
 
-int check_case(int tab[4][4], int pos, int entry[16])
+int	check_case(int tab[4][4], int pos, int entry[16])
 {
 	if (check_row_left(tab, pos, entry) == 1)
 		return (1);

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 18:25:57 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/26 15:19:07 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/24 04:59:05 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/24 05:37:55 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+#include "ft_stock_str.h"
 
 char	*ft_strdup(char *src)
 {
-	char	*variablenew;
-	int		i;
-	int		x;
+	char *variablenew;
+	int i;
+	int x;
 
 	i = 0;
 	x = 0;
@@ -37,14 +37,34 @@ char	*ft_strdup(char *src)
 	return (variablenew);
 }
 
-/* int	main(void)
+int	ft_strlen(char *str)
 {
-	char	*texte = "hello";
-	char	*duplicate = ft_strdup(texte);
+	int		i;
 
-	if (duplicate)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		printf("%s", duplicate);
+		i++;
 	}
-	return (0);
-}  */
+	return (i);
+}
+
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
+{
+	t_stock_str	*tab;
+	int			i;
+
+	i = 0;
+	tab = malloc(sizeof(t_stock_str) * (ac + 1));
+	if (tab == NULL)
+		return (NULL);
+	while (i < ac)
+	{
+		tab[i].size = ft_strlen(av[i]);
+		tab[i].str = av[i];
+		tab[i].copy = ft_strdup(av[i]);
+		i++;
+	}
+	tab[i].str = 0;
+	return (tab);
+}

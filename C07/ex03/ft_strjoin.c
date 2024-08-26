@@ -6,40 +6,40 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 13:49:19 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/22 17:41:47 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/26 15:21:08 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
- 
+
 int	ft_strlen(char *str)
 {
 	int	n;
- 
+
 	n = 0;
 	while (str[n])
 		n++;
 	return (n);
 }
- 
+
 char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
- 
+
 	i = -1;
 	while (src[++i])
 		dest[i] = src[i];
 	dest[i] = '\0';
 	return (dest);
 }
- 
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*dest;
 	int		i;
 	int		j;
- 
+
 	i = 0;
 	j = 0;
 	while (i < size)
@@ -61,7 +61,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	dest[j] = '\0';
 	return (dest);
 }
-int	main(void)
+
+/* int	main(void)
 {
 	char 	*strs[] = {"toi", "moi", "eux", "tous ceux qui le veulent"};
 	int		size = 4;
@@ -80,4 +81,4 @@ int	main(void)
 	free(result);
  
 	return 0;
-}
+} */

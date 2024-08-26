@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions.h                                        :+:      :+:    :+:   */
+/*   rules2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljacq <ljacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/17 10:05:59 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/18 13:26:31 by ljacq            ###   ########.fr       */
+/*   Created: 2024/08/18 12:46:51 by ljacq             #+#    #+#             */
+/*   Updated: 2024/08/18 12:57:20 by ljacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+int	check_double(int tab[4][4], int pos, int num)
+{
+	int	i;
 
-void	ft_putnbr(int nb);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int		ft_atoi(char *str);
-int		ft_strlen(char *str);
-int		*get_numbers(char *str);
-int		check(int ac, char **av);
-int		check_double(int tab[4][4], int pos, int num);
-int		check_case(int tab[4][4], int pos, int entry[16]);
+	i = -1;
+	while (++i < pos / 4)
+		if (tab[i][pos % 4] == num)
+			return (1);
+	i = -1;
+	while (++i < pos % 4)
+		if (tab[pos / 4][i] == num)
+			return (1);
+	return (0);
+}

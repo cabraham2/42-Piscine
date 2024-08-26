@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   common.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ljacq <ljacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 10:05:46 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/17 10:07:51 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/18 12:37:21 by ljacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 // Prints a single char
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
 //prints a list of characters
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
 }
 
 //gives the length of a list of character (strlen)
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -37,11 +37,11 @@ int ft_strlen(char *str)
 }
 
 //similar to (atoi() in stdlib.h)
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int i;
-	int nbr;
-	int nbrminus;
+	int	i;
+	int	nbr;
+	int	nbrminus;
 
 	i = 0;
 	nbr = 0;
@@ -59,9 +59,9 @@ int ft_atoi(char *str)
 }
 
 //prints a number in the standart output
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-	unsigned int nbr;
+	unsigned int	nbr;
 
 	if (nb < 0)
 	{
