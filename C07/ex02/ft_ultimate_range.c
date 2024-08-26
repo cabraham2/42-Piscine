@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 11:33:00 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/26 15:20:06 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:46:49 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 	if (min >= max)
 	{
 		*range = NULL;
-		return (-1);
+		return (0);
 	}
 	tableau = malloc(diff * sizeof(int));
 	if (!(tableau))

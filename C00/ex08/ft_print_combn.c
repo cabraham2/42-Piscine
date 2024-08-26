@@ -6,13 +6,13 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 09:30:50 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/26 14:25:17 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/26 15:31:30 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(a)
+void	ft_putchar(char a)
 {
 	write(1, &a, 1);
 }
@@ -24,7 +24,7 @@ int	boucle(char *tab, int n)
 	i = n - 1;
 	while (i >= 0)
 	{
-		if (tab[i] < '9' - (n - 1 -i))
+		if (tab[i] < '9' - (n - 1 - i))
 		{
 			tab[i]++;
 			while (i < n - 1)
@@ -46,9 +46,7 @@ void	ft_print_combn(int n)
 
 	i = 0;
 	if (n > 10 || n <= 0)
-	{
-		return;
-	}
+		return ;
 	while (i < n)
 	{
 		tab[i] = '0' + i;
@@ -63,14 +61,10 @@ void	ft_print_combn(int n)
 			i++;
 		}
 		if (tab[0] != '9' - (n - 1))
-		{
 			write(1, ", ", 2);
-		}
 		if (!boucle(tab, n))
-		{
-			break;
-		}
-	}	
+			break ;
+	}
 }
 
 /* int main()

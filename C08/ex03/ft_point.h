@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 04:39:38 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/24 04:49:52 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:01:03 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ typedef struct s_point
 {
 	int	x;
 	int	y;
-} t_point;
+}	t_point;
 
 #endif

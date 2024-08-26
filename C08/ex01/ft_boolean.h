@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:57:24 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/22 15:11:52 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/26 15:57:05 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 
-typedef char t_bool;
+typedef char	t_bool;
 
 # define TRUE 1
 # define FALSE 0
