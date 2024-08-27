@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.h                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 15:23:02 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/27 12:27:40 by cabraham         ###   ########.fr       */
+/*   Created: 2024/08/07 18:30:41 by cabraham          #+#    #+#             */
+/*   Updated: 2024/08/10 03:58:54 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ABS_H
-# define FT_ABS_H
+#include <unistd.h>
 
-# define ABS(n)(n + (n >> 31) ^ (n >> 31))
+void	ft_putstr(char *str)
+{
+	int	i;
 
-#endif
+	i = -1;
+	while (str[++i])
+	{
+		write (1, &str[i], 1);
+	}
+}

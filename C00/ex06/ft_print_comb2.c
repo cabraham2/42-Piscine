@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:15:05 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/15 13:49:22 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/27 11:53:31 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_print_comb2(void)
 	}
 }
 
-// int main()
-// {
-//     ft_print_comb2();
-// }
+int main()
+{
+    ft_print_comb2();
+}

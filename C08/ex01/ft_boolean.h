@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:57:24 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/26 15:57:05 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/27 16:07:04 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ typedef char	t_bool;
 # define SUCCESS 0
 # define EVEN_MSG "I have an even number of arguments.\n"
 # define ODD_MSG "I have an odd number of arguments.\n"
-# define EVEN(abraham) abraham % 2 == 0
+# define EVEN(nbr) nbr % 2 == 0
 
 #endif
