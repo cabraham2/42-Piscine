@@ -6,12 +6,17 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 05:22:18 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/27 12:28:38 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/27 21:51:01 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
 #include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int	ft_strlen(char *str)
 {
