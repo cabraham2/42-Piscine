@@ -6,7 +6,7 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 22:32:41 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/28 07:03:36 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:07:45 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	**ft_split(char *str, char *charset)
 	return (output);
 }
 
-int main() {
+/* int main() {
     char *str = "Hello, world! This is a test string.";
     char *charset = " ,!.";
 
@@ -121,4 +121,4 @@ int main() {
     free(result);
 
     return 0;
-}
+} */

@@ -6,8 +6,7 @@ SRCS_FILES =	ft_putchar.c \
 				ft_swap.c \
 				ft_putstr.c \
 				ft_strlen.c \
-				ft_strcmp.c \
-				main.c
+				ft_strcmp.c
 
 DIR_INCLUDES = includes
 DIR_SRCS = srcs
@@ -18,19 +17,17 @@ OBJS = $(SRCS:%.c=%.o)
 all: $(EXEC)
 
 $(EXEC): $(OBJS)
-	$(CC) $(CFLAGS) -o $(EXEC) $(OBJS)
-	@echo "$(EXEC) created"
+	ar rcs -o $(EXEC) $(OBJS)
+	
 
 $(DIR_SRCS)/%.o: $(DIR_SRCS)/%.c
 	$(CC) $(CFLAGS) -I $(DIR_INCLUDES) -o $@ -c $<
 
 clean:
 	rm -rf $(OBJS)
-	@echo "All $(EXEC) are deleated"
 
 fclean: clean
 	rm -rf $(EXEC)
-	@echo "$(EXEC) are deleated"
 
 re: fclean all
 

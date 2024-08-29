@@ -6,17 +6,12 @@
 /*   By: cabraham <cabraham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 04:59:05 by cabraham          #+#    #+#             */
-/*   Updated: 2024/08/27 18:06:37 by cabraham         ###   ########.fr       */
+/*   Updated: 2024/08/28 16:11:24 by cabraham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_stock_str.h"
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 char	*ft_strdup(char *src)
 {
