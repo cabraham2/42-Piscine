@@ -121,8 +121,8 @@ The Piscine was an intense yet rewarding experience. It pushed my limits, taught
 
 Feel free to reach out with questions or collaboration inquiries!
 
-	•	GitHub: cabraham2
-	•	LinkedIn: Clément ABRAHAM
+	•	GitHub: [cabraham2](https://github.com/cabraham2)
+	•	LinkedIn: [Clément ABRAHAM](linkedin.com/in/clément-abraham-530566164)
 
 Clément ABRAHAM
 Master of Finance & École 42 Student
